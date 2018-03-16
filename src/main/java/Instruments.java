@@ -4,11 +4,11 @@ public abstract class Instruments implements IPlay, ISell {
 
     private String material;
     private String colour;
-    private String type;
+    private InstrumentType type;
     private int buyPrice;
     private int sellPrice;
 
-    public Instruments(String material, String colour, String type, int buyPrice, int sellPrice) {
+    public Instruments(String material, String colour, InstrumentType type, int buyPrice, int sellPrice) {
         this.material = material;
         this.colour = colour;
         this.type = type;
@@ -25,7 +25,7 @@ public abstract class Instruments implements IPlay, ISell {
     }
 
     public String getType() {
-        return this.type;
+        return this.type.getType();
     }
 
     public int getBuyPrice() {

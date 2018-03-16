@@ -8,7 +8,7 @@ public class SaxTest {
 
     @Before
     public void before() {
-        sax = new Sax("brass", "gold", "woodwind", 200, 300, "single");
+        sax = new Sax("brass", "gold", InstrumentType.WOODWIND, 200, 300, "single");
     }
 
     @Test
@@ -23,7 +23,7 @@ public class SaxTest {
 
     @Test
     public void getType() {
-        assertEquals("woodwind", sax.getType());
+        assertEquals("Woodwind", sax.getType());
     }
 
     @Test

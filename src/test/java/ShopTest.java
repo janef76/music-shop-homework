@@ -14,8 +14,8 @@ public class ShopTest {
     @Before
     public void before() {
         shop = new Shop("Jungle Drums!");
-        guitar = new Guitar("wood", "Blue", "strings", 100, 120, 6);
-        trumpet = new Trumpet("Gold", "gold", "brass", 150, 250, 3);
+        guitar = new Guitar("wood", "Blue", InstrumentType.STRING, 100, 120, 6);
+        trumpet = new Trumpet("Gold", "gold", InstrumentType.BRASS, 150, 250, 3);
     }
 
     @Test
@@ -25,19 +25,29 @@ public class ShopTest {
 
     @Test
     public void canAddItemsToStock() {
-        assertEquals(1, shop.addItemsToStock(guitar));
+        shop.addItemsToStock(guitar);
+        assertEquals(1, shop.getStockSize());
     }
 
     @Test
     public void canSellStockItem() {
         shop.addItemsToStock(guitar);
-        assertEquals(0, shop.sellStockItem(guitar));
+        shop.addItemsToStock(trumpet);
+        assertEquals(2, shop.getStockSize());
     }
 
     @Test
     public void canBuyAndSell() {
         shop.addItemsToStock(guitar);
         shop.addItemsToStock(trumpet);
-        assertEquals(1, shop.sellStockItem(trumpet));
+        shop.sellStockItem(trumpet);
+        assertEquals(1, shop.getStockSize());
+    }
+
+    @Test
+    public void canGetMarkUpValueOfAllStock() {
+        shop.addItemsToStock(guitar);
+        shop.addItemsToStock(trumpet);
+        assertEquals(120, shop.calculateAllMarkup());
     }
 }

@@ -9,7 +9,7 @@ public class GuitarTest {
 
     @Before
     public void before() {
-        guitar = new Guitar("wood", "Black", "Strings", 50, 100, 6);
+        guitar = new Guitar("wood", "Black", InstrumentType.STRING, 50, 100, 6);
     }
 
     @Test
@@ -24,7 +24,7 @@ public class GuitarTest {
 
     @Test
     public void getType() {
-        assertEquals("Strings", guitar.getType());
+        assertEquals("String", guitar.getType());
     }
 
     @Test

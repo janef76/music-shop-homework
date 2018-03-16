@@ -8,7 +8,7 @@ public class TrumpetTest {
 
     @Before
     public void before() {
-        trumpet = new Trumpet("silver", "silver", "brass", 70, 120, 3);
+        trumpet = new Trumpet("silver", "silver", InstrumentType.BRASS, 70, 120, 3);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class TrumpetTest {
 
     @Test
     public void getType() {
-        assertEquals("brass", trumpet.getType());
+        assertEquals("Brass", trumpet.getType());
     }
 
     @Test

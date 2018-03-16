@@ -8,7 +8,7 @@ public class KeyboardTest {
 
     @Before
     public void before() {
-        keyboard = new Keyboard("plastic", "red", "keyboard", 120, 150, 36);
+        keyboard = new Keyboard("plastic", "red", InstrumentType.KEYBOARD, 120, 150, 36);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class KeyboardTest {
 
     @Test
     public void getType() {
-        assertEquals("keyboard", keyboard.getType());
+        assertEquals("Keyboard", keyboard.getType());
     }
 
     @Test

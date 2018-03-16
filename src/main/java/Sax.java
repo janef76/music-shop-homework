@@ -1,7 +1,7 @@
 public class Sax extends Instruments {
     String reedType;
 
-    public Sax(String material, String colour, String type, int buyPrice, int sellPrice, String reedType) {
+    public Sax(String material, String colour, InstrumentType type, int buyPrice, int sellPrice, String reedType) {
         super(material, colour, type, buyPrice, sellPrice);
         this.reedType = reedType;
     }
